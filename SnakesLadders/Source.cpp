@@ -24,6 +24,25 @@ int RNG()
 	return *num;
 }
 
+bool comparePlayers(CPlayer* a, CPlayer* b) {
+	return a->GetPosition() > b->GetPosition(); // Sort in descending order of position
+}
+
+
+//output final positions and place
+void LeaderBoard(vector<CPlayer*>& players, unique_ptr<CGame>& game)
+{
+	unique_ptr<int>pPosition = make_unique<int>();
+
+	//bubble sort
+	std::sort(players.begin(), players.end(), comparePlayers);
+
+	for (*pPosition = 0; *pPosition < game->GetPlayers(); ++*pPosition)
+	{
+		cout << "Position " << *pPosition + 1 << ": Player " << players[*pPosition]->GetName() << "\n";
+		cout << "End position: space " << players[*pPosition]->GetPosition() << "\n";
+	}
+}
 
 
 //used for playing a round
@@ -218,5 +237,7 @@ int main() {
 		GameRound(pPlayers, pGame, pMovement, pRunning);
 		pGame->SetRound();
 	}
+
+	LeaderBoard(pPlayers, pGame);
 	return 0;
 }

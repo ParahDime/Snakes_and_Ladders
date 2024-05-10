@@ -5,6 +5,7 @@
 #include <iostream>
 #include <fstream>
 #include <memory>
+#include <algorithm>
 
 using std::make_unique;
 using std::cin;
@@ -17,4 +18,5 @@ using std::ostream;
 using std::ws;
 using std::unique_ptr;
 using std::vector;
+using std::sort;
 #pragma once
