@@ -7,12 +7,13 @@ The program takes in 2 text files (included in the repo). Board.txt reads in the
 Rules.txt includes the rules for the game. Players take it in turns to automatically move around a board until one player wins.
 
 Board.txt
+
 First value - Board size
-Other values - start + end points of any movement on the board.
+
+Other values within the file that have 2 values per line refer to the snakes, or ladders
+When a player lands on the first tile, they will then be moved to the second tile
 
 Rules.txt
-First value - Players on the boar
-Second value - Number of dice used
+First value - Players that are used within the game
+Second value - Number of dice used. Dice are 6 sided
 Third value - Game mode. 0 for normal rules (snakes and ladders, 100 and over = win) 1 for cruel (all snakes, exactly 100 = win. Over 100 = move back X spaces over)
-
-Ensure when editing the files for play that it matches the above config, especially for Rules.txt
